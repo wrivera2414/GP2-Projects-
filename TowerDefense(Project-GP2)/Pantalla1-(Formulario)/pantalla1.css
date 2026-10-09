@@ -3,7 +3,7 @@ body {
   background:
     linear-gradient(rgba(6, 8, 16, 0.55), rgba(6, 8, 16, 0.75)),
     url("castillo.jpg") center / cover no-repeat fixed;
-  font-family: 'Cinzel', Georgia, serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .game-form {
@@ -37,7 +37,7 @@ body {
   background-color: #f0d78c;
   color: #2a1f0a;
   border: 2px solid #8a6d1a;
-  font-family: inherit;
+  font-family: "Cinzel", Georgia, serif;
 }
 
 .btn-start {
@@ -86,7 +86,6 @@ body {
   padding: 8px;
   margin-bottom: 8px;
 }
-
 
 /* Imágenes de los personajes */
 .imagen-personaje {

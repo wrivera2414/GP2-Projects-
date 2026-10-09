@@ -1,50 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tower Defense - Pantalla 2</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="pantalla2.css">
-</head>
-<body>
-  <main class="contenedor container">
-    <header>
-      <div>
-        <h1>🏰 Tower Defense</h1>
-        <p>Defiende tu base colocando torres en el terreno.</p>
-      </div>
-      <span class="etiqueta" id="jugador">Jugador: Invitado</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tower Defense - Pantalla 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pantalla2.css" />
+  </head>
+  <body>
+    <main class="contenedor container">
+      <header>
+        <div>
+          <h1>🏰 Tower Defense</h1>
+          <p>Defiende tu base colocando torres en el terreno.</p>
+        </div>
+        <span class="etiqueta" id="jugador">Jugador: Invitado</span>
 
-<span class="etiqueta" id="personaje">
-  <img id="imagenPersonaje" src="" alt="" class="retrato-personaje">
-  <span id="nombrePersonaje">Personaje: No seleccionado</span>
-</span>
-    </header>
+        <br class="etiqueta" id="personaje" />
+        <img id="imagenPersonaje" src="" alt="" class="retrato-personaje" />
+        <span id="nombrePersonaje">Personaje: No seleccionado</span>
+        <!-- Agrega este elemento donde quieras mostrar la dificultad en tu marcador / panel -->
+        <h3 id="dificultadJugador">Dificultad: -</h3>
+      </header>
 
-    <section class="marcador" aria-label="Estadísticas de la partida">
-      <div>❤️ Vidas <strong id="vidas">10</strong></div>
-      <div>🪙 Monedas <strong id="monedas">150</strong></div>
-      <div>⭐ Puntos <strong id="puntos">0</strong></div>
-      <div>🌊 Oleada <strong id="oleada">0 / 3</strong></div>
-    </section>
+      <section class="marcador" aria-label="Estadísticas de la partida">
+        <div>❤️ Vidas <strong id="vidas">10</strong></div>
+        <div>🪙 Monedas <strong id="monedas">150</strong></div>
+        <div>⭐ Puntos <strong id="puntos">0</strong></div>
+        <div>🌊 Oleada <strong id="oleada">0 / 3</strong></div>
+      </section>
 
-    <section class="juego">
-      <canvas id="lienzo" width="800" height="480" aria-label="Campo del juego Tower Defense"></canvas>
-      <p id="mensaje" role="status">Presiona «Iniciar oleada» para comenzar.</p>
-      <div class="controles">
-        <button id="iniciar">▶ Iniciar oleada</button>
-        <button id="pausar" class="secundario" disabled>⏸ Pausar</button>
-        <button id="reiniciar" class="secundario">↻ Reiniciar partida</button>
-      </div>
-      <p class="ayuda">Haz clic en un cuadro verde para colocar una torre (costo: 50 monedas). No puedes colocar torres sobre el camino.</p>
-    </section>
+      <section class="juego">
+        <canvas
+          id="lienzo"
+          width="800"
+          height="480"
+          aria-label="Campo del juego Tower Defense"
+        ></canvas>
+        <p id="mensaje" role="status">
+          Presiona «Iniciar oleada» para comenzar.
+        </p>
+        <div class="controles">
+          <button id="iniciar">▶ Iniciar oleada</button>
+          <button id="pausar" class="secundario" disabled>⏸ Pausar</button>
+          <button id="reiniciar" class="secundario">↻ Reiniciar partida</button>
+          <button id="volver" class="secundario">🏠 Menú Principal</button>
+        </div>
+        <p class="ayuda">
+          Haz clic en un cuadro verde para colocar una torre (costo: 50
+          monedas). No puedes colocar torres sobre el camino.
+        </p>
+      </section>
 
-    <section class="explicacion">
-      <h2>¿Cómo se juega?</h2>
-      <p>Los enemigos siguen el camino amarillo hasta la base. Haz clic en el césped para construir torres azules. Las torres disparan cuando un enemigo está cerca. Ganas monedas y puntos al derrotarlos. Sobrevive a las 3 oleadas.</p>
-    </section>
-  </main>
-  <script src="pantalla2.js"></script>
-</body>
+      <section class="explicacion">
+        <h2>¿Cómo se juega?</h2>
+        <p>
+          Los enemigos siguen el camino amarillo hasta la base. Haz clic en el
+          césped para construir torres azules. Las torres disparan cuando un
+          enemigo está cerca. Ganas monedas y puntos al derrotarlos. Sobrevive a
+          las 3 oleadas.
+        </p>
+      </section>
+    </main>
+    <script src="pantalla2.js"></script>
+  </body>
 </html>
