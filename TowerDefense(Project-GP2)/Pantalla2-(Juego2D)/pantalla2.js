@@ -61,6 +61,11 @@ const nombre = parametros.get('jugador') ||
   'Invitado';
 
 const personaje = datosJugador && datosJugador.personaje;
+const imagenesPersonajes = {
+  Caballero: "../Pantalla1-(Formulario)/imagenes/caballero.jpg",
+  Mago: "../Pantalla1-(Formulario)/imagenes/mago.jpg",
+  Arquero: "../Pantalla1-(Formulario)/imagenes/arquero.jpg"
+};
 
 const elementoJugador = document.getElementById('jugador');
 const elementoPersonaje = document.getElementById('personaje');
@@ -69,10 +74,22 @@ if (elementoJugador) {
   elementoJugador.textContent = 'Jugador: ' + nombre;
 }
 
-if (elementoPersonaje) {
-  elementoPersonaje.textContent = personaje
-    ? `Personaje: ${personaje.emoji || ''} ${personaje.nombre || ''}`.trim()
-    : 'Personaje: No seleccionado';
+
+const imagenPersonaje = document.getElementById('imagenPersonaje');
+const nombrePersonaje = document.getElementById('nombrePersonaje');
+
+if (personaje && imagenesPersonajes[personaje.nombre]) {
+  if (imagenPersonaje) {
+    imagenPersonaje.src = imagenesPersonajes[personaje.nombre];
+    imagenPersonaje.alt = personaje.nombre;
+    imagenPersonaje.style.display = 'block';
+  }
+
+  if (nombrePersonaje) {
+    nombrePersonaje.textContent = 'Personaje: ' + personaje.nombre;
+  }
+} else if (nombrePersonaje) {
+  nombrePersonaje.textContent = 'Personaje: No seleccionado';
 }
 
 // ============================================

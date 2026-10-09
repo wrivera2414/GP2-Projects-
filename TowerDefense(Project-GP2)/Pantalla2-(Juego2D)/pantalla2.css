@@ -240,3 +240,23 @@ button.secundario {
     transition: none !important;
   }
 }
+
+
+/* Retrato del personaje seleccionado */
+.retrato-personaje {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+  border: 2px solid #f3c969;
+  display: none;
+  flex-shrink: 0;
+}
+
+/* Alinear la imagen con el nombre */
+#personaje {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}

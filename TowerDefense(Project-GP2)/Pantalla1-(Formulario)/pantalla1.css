@@ -72,3 +72,34 @@ body {
   font-size: 2.8rem;
   line-height: 1.2;
 }
+
+
+/* Imágenes de los personajes */
+.imagen-personaje {
+  width: 100%;
+  max-width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+}
+
+/* Tarjetas de selección */
+.personaje {
+  height: 100%;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.personaje:hover {
+  transform: translateY(-4px);
+}
+
+.personaje.seleccionado {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
