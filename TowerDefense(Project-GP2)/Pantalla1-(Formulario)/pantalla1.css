@@ -46,8 +46,6 @@ body {
   transform: scale(1.02);
   background-color: #f39c12;
 }
-
-/* Parte de Ricardo: personajes */
 .personaje {
   cursor: pointer;
   color: white;
