@@ -49,11 +49,26 @@ body {
 .personaje {
   cursor: pointer;
   color: white;
+  background-color: rgba(255, 255, 255, 0.06);
   border: 2px solid transparent;
-  padding: 10px;
+  border-radius: 12px;
+  padding: 12px 6px;
   text-align: center;
+  transition: 0.2s;
+}
+
+.personaje:hover {
+  transform: translateY(-4px);
+  border-color: #f39c12;
 }
 
 .personaje.seleccionado {
   border-color: #f1c40f;
+  background-color: rgba(241, 196, 15, 0.18);
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+}
+
+.emoji {
+  font-size: 2.8rem;
+  line-height: 1.2;
 }
