@@ -116,6 +116,10 @@ function finalizar(gano) {
   localStorage.setItem('resultadoTowerDefense', JSON.stringify(resultado));
   mensaje(gano ? '🏆 ¡Ganaste! Defendiste la base.' : '💔 Fin del juego: la base fue destruida.');
   actualizarMarcador();
+  
+setTimeout(function () {
+    window.location.href = '../Pantalla3-(Resultado)/pantalla3.html';
+}, 1500);
 }
 
 function actualizar(delta) {
