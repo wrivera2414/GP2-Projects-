@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #eef6fc; color: #243b53; font-family: Arial, sans-serif; }
+.contenedor { max-width: 930px; margin: 28px auto; padding: 0 16px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+h1 { margin: 0; color: #1767a5; }
+header p { margin: 8px 0 20px; }
+.etiqueta { background: white; padding: 10px 14px; border-radius: 10px; }
+.marcador { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 15px; }
+.marcador div { background: white; padding: 15px; border-radius: 10px; text-align: center; }
+.marcador strong { display: block; font-size: 23px; margin-top: 7px; color: #1767a5; }
+.juego, .explicacion { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+canvas { display: block; width: 100%; height: auto; border: 2px solid #9bc3dd; border-radius: 8px; cursor: crosshair; }
+#mensaje { text-align: center; font-weight: bold; min-height: 20px; }
+.controles { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+button { background: #2684c6; color: white; border: 0; border-radius: 8px; padding: 12px 18px; font-weight: bold; cursor: pointer; }
+button:hover { background: #1767a5; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+button.secundario { background: #64748b; }
+.ayuda { color: #52677b; text-align: center; font-size: 14px; }
+.expIicacion h2, .explicacion h2 { margin-top: 0; color: #1767a5; }
+.expIicacion p, .explicacion p { line-height: 1.6; }
+@media (max-width: 600px) { header { flex-direction: column; align-items: start; } .marcador { grid-template-columns: repeat(2, 1fr); } }
