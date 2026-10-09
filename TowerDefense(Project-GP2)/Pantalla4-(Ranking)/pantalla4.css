@@ -1,0 +1,162 @@
+/* ============================================
+   ESTILOS PANTALLA 4 - RANKING / TOWER DEFENSE
+   ============================================ */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1c29 0%, #0e1017 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Contenedor Principal */
+.contenedor-ranking {
+  background-color: #24283b;
+  border: 2px solid #414868;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+}
+
+.contenedor-ranking h1 {
+  color: #ff9e64;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px rgba(255, 158, 100, 0.3);
+}
+
+/* Tabla de Posiciones */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background-color: #1a1b26;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #3b4261;
+}
+
+th {
+  color: #7aa2f7;
+  padding: 14px 12px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #414868;
+}
+
+td {
+  padding: 12px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #292e42;
+  color: #c0caf5;
+}
+
+/* Efecto hover en filas */
+tbody tr:hover {
+  background-color: #2ac3de15;
+  transition: background-color 0.2s ease;
+}
+
+/* Estilos especiales para el Podio (Top 3) */
+tbody tr:nth-child(1) td {
+  color: #ffe066; /* Oro */
+  font-weight: bold;
+}
+
+tbody tr:nth-child(2) td {
+  color: #e0e6ed; /* Plata */
+  font-weight: bold;
+}
+
+tbody tr:nth-child(3) td {
+  color: #f4a261; /* Bronce */
+  font-weight: bold;
+}
+
+/* Botones y Acciones */
+.acciones {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Botón Nueva Partida */
+button:nth-child(1) {
+  background-color: #9ece6a;
+  color: #1a1c29;
+}
+
+button:nth-child(1):hover {
+  background-color: #73daca;
+  box-shadow: 0 0 12px rgba(115, 218, 202, 0.4);
+}
+
+/* Botón Borrar Historial */
+#btnLimpiarRanking {
+  background-color: #f7768e;
+  color: #ffffff;
+}
+
+#btnLimpiarRanking:hover {
+  background-color: #db4b4b;
+  box-shadow: 0 0 12px rgba(219, 75, 75, 0.4);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 600px) {
+  .contenedor-ranking {
+    padding: 15px;
+  }
+
+  th,
+  td {
+    padding: 8px 5px;
+    font-size: 0.85rem;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

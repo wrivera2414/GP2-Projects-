@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking Top 10 - Tower Defense</title>
+    <link rel="stylesheet" href="pantalla4.css" />
+    <!-- Ajusta a tu archivo de estilos -->
+  </head>
+  <body>
+    <div class="contenedor-ranking">
+      <h1>🏆 Tabla de Posiciones (Top 10)</h1>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Pos.</th>
+            <th>Jugador</th>
+            <th>Personaje</th>
+            <th>Puntos</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRanking">
+          <!-- Se llena dinámicamente con JavaScript -->
+        </tbody>
+      </table>
+
+      <br />
+
+      <div class="acciones">
+        <button
+          onclick="
+            window.location.href = '../Pantalla1-(Formulario)/pantalla1.html'
+          "
+        >
+          🎮 Nueva Partida
+        </button>
+        <button id="btnLimpiarRanking">🗑️ Borrar Historial</button>
+      </div>
+    </div>
+
+    <script src="pantalla4.js"></script>
+  </body>
+</html>

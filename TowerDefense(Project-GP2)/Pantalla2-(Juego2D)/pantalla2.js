@@ -358,7 +358,6 @@ function crearEnemigo() {
 // ============================================
 // FINALIZAR PARTIDA
 // ============================================
-
 function finalizar(gano) {
   if (terminado) return;
 
@@ -366,17 +365,43 @@ function finalizar(gano) {
   jugando = false;
   pausado = false;
 
+  // 1. Crear el objeto con la partida actual
   const resultado = {
-    jugador: nombre,
-    personaje: personaje,
+    jugador: nombre.slice(0, 10), // Limitar a máximo 10 caracteres
+    personaje:
+      personaje && personaje.nombre
+        ? personaje.nombre
+        : personaje || "Sin personaje",
     puntos: puntos,
     oleada: oleada,
     enemigosEliminados: eliminados,
     monedas: monedas,
     gano: gano,
+    fecha: new Date().toLocaleDateString(),
   };
 
+  // 2. Guardar el resultado individual para la Pantalla 3
   localStorage.setItem("resultadoTowerDefense", JSON.stringify(resultado));
+
+  // 3. Obtener el ranking global guardado (o crear una lista vacía)
+  let ranking = [];
+  try {
+    ranking = JSON.parse(localStorage.getItem("rankingTowerDefense") || "[]");
+  } catch (e) {
+    ranking = [];
+  }
+
+  // 4. Agregar la partida actual al historial
+  ranking.push(resultado);
+
+  // 5. Ordenar de mayor a menor punto
+  ranking.sort((a, b) => b.puntos - a.puntos);
+
+  // 6. Conservar únicamente el Top 10
+  ranking = ranking.slice(0, 10);
+
+  // 7. Guardar el ranking actualizado para la Pantalla 4
+  localStorage.setItem("rankingTowerDefense", JSON.stringify(ranking));
 
   mensaje(
     gano
