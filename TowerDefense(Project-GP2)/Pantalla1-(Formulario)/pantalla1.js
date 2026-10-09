@@ -26,7 +26,7 @@ document.querySelectorAll(".personaje").forEach((t) => {
 
 document.getElementById("formulario").addEventListener("submit", (e) => {
   e.preventDefault();
-  window.open("../Pantalla2-(Juego2D)/Pantalla2.html", "blank");
+
   const nombre = document.getElementById("nombre").value.trim();
 
   if (nombre === "" || elegido === null) {
@@ -34,7 +34,12 @@ document.getElementById("formulario").addEventListener("submit", (e) => {
     return;
   }
 
-  const jugador = { nombre: nombre, personaje: elegido };
+  const jugador = {
+    nombre: nombre,
+    personaje: elegido
+  };
+
   localStorage.setItem("jugador", JSON.stringify(jugador));
-  // window.location.href = "../Pantalla2-(Juego2D)/Pantalla2.html";
+
+  window.location.href = "../Pantalla2-(Juego2D)/Pantalla2.html";
 });
