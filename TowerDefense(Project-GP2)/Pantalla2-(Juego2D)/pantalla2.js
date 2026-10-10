@@ -10,10 +10,10 @@ if (!canvas || !ctx) {
 }
 
 const tamano = 40;
-const VIDA_BASE_ENEMIGO = 50;
-const VIDA_EXTRA_POR_OLEADA = 25;
+const VIDA_BASE_ENEMIGO = 70;
+const VIDA_EXTRA_POR_OLEADA = 2;
 const INTERVALO_DISPARO = 700;
-const COSTO_TORRE = 50;
+const COSTO_TORRE = 35;
 
 // CAMINO 1 (Superior)
 const camino1 = [
@@ -81,7 +81,7 @@ let torres = [];
 let enemigos = [];
 let disparos = [];
 
-let vidas = 10;
+let vidas = 5;
 let monedas = 150;
 let puntos = 0;
 let oleada = 0;
@@ -114,9 +114,9 @@ const TOTAL_OLEADAS =
 
 // Multiplicador según dificultad elegida
 const multiplicadorDificultad = {
-  facil: 0.8,
-  medio: 1.0,
-  dificil: 1.3,
+  facil: 2.3,
+  medio: 2.9,
+  dificil: 3.3,
 }[(datosJugador && datosJugador.dificultad) || "medio"];
 
 const nombre =
@@ -220,7 +220,7 @@ function reiniciar() {
   enemigos = [];
   disparos = [];
 
-  vidas = 10;
+  vidas = 5;
   monedas = 150;
   puntos = 0;
   oleada = 0;
@@ -277,7 +277,7 @@ canvas.addEventListener("click", function (evento) {
   }
 
   if (monedas < COSTO_TORRE) {
-    mensaje("Necesitas 50 monedas para comprar otra torre.");
+    mensaje("Necesitas 35 monedas para comprar otra torre.");
     return;
   }
 
@@ -285,8 +285,10 @@ canvas.addEventListener("click", function (evento) {
     columna: columna,
     fila: fila,
     alcance: 110,
-    dano: 25,
+    dano: 20,
     espera: 0,
+    vida: 120, // NUEVO: Salud de la torre para que pueda recibir daño
+    vidaMax: 120,
   });
 
   monedas -= COSTO_TORRE;
@@ -312,7 +314,7 @@ function iniciarOleada() {
       : 1;
 
   // Escala progresiva de cantidad de enemigos según la oleada
-  totalEnemigos = Math.floor((10 + (oleada - 1) * 10) * mult);
+  totalEnemigos = Math.floor((15 + (oleada - 1) * 10) * mult);
 
   generados = 0;
   tiempoAparicion = 0;
@@ -335,13 +337,18 @@ function posicion(casilla) {
 }
 
 function crearEnemigo() {
-  // Alterna caminos entre enemigos pares e impares
   const caminoAsignado = Math.random() < 0.5 ? camino1 : camino2;
   const inicio = posicion(caminoAsignado[0]);
 
-  // Escala progresiva dinámica sin importar la cantidad de oleadas
-  const vidaCalculada = (50 + oleada * 30) * multiplicadorDificultad;
-  const velocidadCalculada = 50 + oleada * 10;
+  // Escalado de vida agresivo que ya tenías
+  const multiplicadorProgresivo = Math.pow(1.6, oleada - 1);
+  const vidaCalculada = Math.floor(
+    VIDA_BASE_ENEMIGO * multiplicadorProgresivo * multiplicadorDificultad,
+  );
+  const velocidadCalculada = 30 + (oleada - 1) * 3;
+
+  // NUEVO: Verificamos si la dificultad actual es "dificil"
+  const esDificil = dificultadSeleccionada === "dificil";
 
   enemigos.push({
     x: inicio.x,
@@ -352,6 +359,12 @@ function crearEnemigo() {
     velocidad: velocidadCalculada,
     escapo: false,
     muerto: false,
+    // Propiedades de combate contra torres (Solo activas en Difícil)
+    puedeAtacarTorres: esDificil,
+    rangoAtaque: 40, // Distancia a la que se detiene para golpear la torre
+    danoTorre: 10, // Cuánta vida le baja a la torre por golpe
+    esperaAtaque: 0, // Cooldown entre ataques
+    atacandoTorre: null, // Referencia a la torre que está golpeando
   });
 }
 
@@ -426,16 +439,39 @@ function actualizar(delta) {
   tiempoAparicion += delta;
 
   // Generar enemigos a intervalos de tiempo (cada 1000 ms = 1 segundo)
-  if (generados < totalEnemigos && tiempoAparicion >= 1000) {
+  if (generados < totalEnemigos && tiempoAparicion >= 900) {
     crearEnemigo();
     generados++;
     tiempoAparicion = 0;
   }
 
-  // Mover enemigos por su camino correspondiente
+  // Mover enemigos o hacer que ataquen torres
   enemigos.forEach(function (enemigo) {
     if (enemigo.escapo || enemigo.muerto) return;
 
+    // SI ESTÁ EN DIFÍCIL Y PUEDE ATACAR TORRES: Buscar torre cercana
+    if (enemigo.puedeAtacarTorres) {
+      // Buscar si hay alguna torre dentro de su rango de ataque
+      const torreCercana = torres.find(function (torre) {
+        const tx = torre.columna * tamano + 20;
+        const ty = torre.fila * tamano + 20;
+        return (
+          Math.hypot(enemigo.x - tx, enemigo.y - ty) <= enemigo.rangoAtaque
+        );
+      });
+
+      if (torreCercana) {
+        // El enemigo se detiene a atacar la torre
+        enemigo.esperaAtaque -= delta;
+        if (enemigo.esperaAtaque <= 0) {
+          torreCercana.vida -= enemigo.danoTorre;
+          enemigo.esperaAtaque = 1000; // Ataca una vez por segundo (1000ms)
+        }
+        return; // Detiene el movimiento mientras ataca
+      }
+    }
+
+    // Movimiento normal por el camino si no hay torre cerca
     const destino = posicion(enemigo.camino[enemigo.paso]);
     const dx = destino.x - enemigo.x;
     const dy = destino.y - enemigo.y;
@@ -455,6 +491,11 @@ function actualizar(delta) {
       enemigo.x += (dx / distancia) * avance;
       enemigo.y += (dy / distancia) * avance;
     }
+  });
+
+  // NUEVO: Eliminar torres cuya vida llegue a 0
+  torres = torres.filter(function (torre) {
+    return torre.vida > 0;
   });
 
   // Las torres atacan a enemigos vivos dentro de su alcance
