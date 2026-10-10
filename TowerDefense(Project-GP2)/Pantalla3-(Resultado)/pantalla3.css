@@ -128,4 +128,22 @@ btn-tertiary:hover {
     width: 100%;
     margin: 5px 0;
   }
+
+/* Estado final de la partida */
+.estado-partida {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.estado-partida.victoria {
+    color: #4ade80;
+    text-shadow: 0 0 14px #4ade8066;
+}
+
+.estado-partida.derrota {
+    color: #fb7185;
+    text-shadow: 0 0 14px #fb718566;
+}
+
 }
