@@ -6,9 +6,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const datosGuardados = localStorage.getItem('resultadoTowerDefense');
 
     if (datosGuardados) {
-
+        
+        // Mostrar icono del personaje
+        document.getElementById('avatarJugador').textContent =
+        resultado.personajeIcono || resultado.avatar || '🛡️';
         const resultado = JSON.parse(datosGuardados);
+        
+        // Mostrar duración de la partida
+        const duracion = document.getElementById('duracionPartida');
 
+        if (resultado.duracionSegundos != null) {
+         const total = Math.floor(Number(resultado.duracionSegundos));
+        const minutos = Math.floor(total / 60);
+        const segundos = total % 60;
+
+        duracion.textContent =
+            String(minutos).padStart(2, '0') + ':' +
+            String(segundos).padStart(2, '0');
+            } else {
+                duracion.textContent = '--:--';
+            }
+        
         // Mostrar el nombre del jugador
         document.getElementById('nombreJugador').textContent =
             'Jugador: ' + (resultado.jugador || 'Jugador');
