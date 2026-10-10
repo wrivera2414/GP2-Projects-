@@ -95,6 +95,41 @@ let eliminados = 0;
 let fotogramaAnterior = 0;
 let pausado = false;
 
+let inicioPartida = null;
+
+
+let intervaloCronometro = null;
+
+function actualizarCronometro() {
+    const elemento = document.getElementById('cronometro');
+    if (!elemento || inicioPartida === null) return;
+
+    const total = Math.floor((Date.now() - inicioPartida) / 1000);
+    const minutos = String(Math.floor(total / 60)).padStart(2, '0');
+    const segundos = String(total % 60).padStart(2, '0');
+
+    elemento.textContent = `⏱️ Tiempo: ${minutos}:${segundos}`;
+}
+
+function iniciarCronometro() {
+    if (inicioPartida !== null) return;
+
+    inicioPartida = Date.now();
+    actualizarCronometro();
+
+    intervaloCronometro = setInterval(actualizarCronometro, 1000);
+}
+
+function detenerCronometro() {
+    actualizarCronometro();
+
+    if (intervaloCronometro !== null) {
+        clearInterval(intervaloCronometro);
+        intervaloCronometro = null;
+    }
+}
+
+
 // ============================================
 // DATOS DEL JUGADOR Y PERSONAJE
 // ============================================
@@ -233,7 +268,7 @@ function reiniciar() {
   pausado = false;
   eliminados = 0;
   fotogramaAnterior = 0;
-
+  inicioPartida = null;
   mensaje("Coloca torres y presiona «Iniciar oleada».");
   actualizarMarcador();
   dibujar();
@@ -302,7 +337,12 @@ canvas.addEventListener("click", function (evento) {
 // ============================================
 
 function iniciarOleada() {
+  iniciarCronometro();
   if (jugando || terminado || oleada >= TOTAL_OLEADAS) return;
+
+  if (inicioPartida === null) {
+      inicioPartida = Date.now();
+    }
 
   oleada++;
 
@@ -372,6 +412,7 @@ function crearEnemigo() {
 // FINALIZAR PARTIDA
 // ============================================
 function finalizar(gano) {
+  detenerCronometro();
   if (terminado) return;
 
   terminado = true;
@@ -389,6 +430,9 @@ function finalizar(gano) {
     oleada: oleada,
     enemigosEliminados: eliminados,
     monedas: monedas,
+    duracionSegundos: inicioPartida === null
+    ? 0
+    : Math.floor((Date.now() - inicioPartida) / 1000),
     gano: gano,
     fecha: new Date().toLocaleDateString(),
   };
