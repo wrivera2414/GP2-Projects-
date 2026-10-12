@@ -2,7 +2,7 @@ body {
   margin: 0;
   background:
     linear-gradient(rgba(6, 8, 16, 0.55), rgba(6, 8, 16, 0.75)),
-    url("castillo.jpg") center / cover no-repeat fixed;
+    url("imagenes/castillo.jpg") center / cover no-repeat fixed;
   font-family: "Inter", Arial, sans-serif;
 }
 
