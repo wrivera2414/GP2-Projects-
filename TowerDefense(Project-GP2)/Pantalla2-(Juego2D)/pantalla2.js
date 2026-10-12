@@ -437,6 +437,7 @@ canvas.addEventListener("click", function (evento) {
     return;
   }
 
+  // Cada torre en pie encarece la siguiente
   const costo = costoSiguienteTorre();
 
   if (monedas < costo) {
@@ -450,7 +451,7 @@ canvas.addEventListener("click", function (evento) {
     alcance: 110,
     dano: 20,
     espera: 0,
-    vida: 120, // Salud de la torre (solo recibe daño en Difícil)
+    vida: 120,
     vidaMax: 120,
   });
 
@@ -523,6 +524,7 @@ function elegirTipoEnemigo(esUltimoDeLaOleada) {
   return "normal";
 }
 
+//Camino por el que iran los enemigos, se elige aleatoriamente entre camino1 y camino2
 function crearEnemigo(nombreTipo) {
   const tipo = TIPOS_ENEMIGO[nombreTipo];
   const caminoAsignado = Math.random() < 0.5 ? camino1 : camino2;
