@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnLimpiar = document.getElementById("btnLimpiarRanking");
 
   // Leer el ranking guardado en localStorage
+  // Si no hay datos, inicializar como un array vacío y lo convierte a un objeto JavaScript
   const ranking = JSON.parse(
     localStorage.getItem("rankingTowerDefense") || "[]",
   );
 
+  // Función para renderizar la tabla de ranking
   function renderizarTabla() {
     if (!tabla) return;
 
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Ordenar el ranking por puntos de mayor a menor
     tabla.innerHTML = ranking
       .map((partida, index) => {
         let posicion = `${index + 1}º`;

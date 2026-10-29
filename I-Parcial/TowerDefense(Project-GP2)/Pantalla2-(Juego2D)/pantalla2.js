@@ -827,7 +827,7 @@ function dibujar() {
 
   // Dibujar Camino 1
   camino1.forEach(function (casilla) {
-    ctx.fillStyle = "#e9c779";
+    ctx.fillStyle = "#c9155d";
     ctx.fillRect(casilla[0] * tamano, casilla[1] * tamano, tamano, tamano);
   });
 
