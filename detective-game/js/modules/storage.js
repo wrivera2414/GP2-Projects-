@@ -1,1 +1,0 @@
-// Responsable: Lógica de juego
