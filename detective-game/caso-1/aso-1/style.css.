@@ -1,3 +1,16 @@
+:root {
+    --fondo: #16263f;
+    --panel: #1d3350;
+    --barra: #233a57;
+    --tarjeta: #35566e;
+    --acento: #4fc3b0;
+    --acento-claro: #6fd9c7;
+    --texto: #e8f1f2;
+    --texto-suave: #a9bcc9;
+    --rojo: #ff6b6b;
+    --amarillo: #f6c453;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,39 +19,288 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #16263f;
-    color: #e8f1f2;
+    background: radial-gradient(circle at top, #1e3556 0%, var(--fondo) 60%);
+    color: var(--texto);
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* ---------- Barra superior ---------- */
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--barra);
+    padding: 14px 24px;
+    border-bottom: 3px solid var(--acento);
+}
+
+.barra h1 {
+    font-size: 1.2rem;
+}
+
+.etiqueta {
+    color: var(--acento);
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---------- Contenedor y pantallas ---------- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
     padding: 24px;
 }
 
-h1, h2, h3 {
-    color: #4fc3b0;
-    margin-bottom: 12px;
+.pantalla {
+    background: var(--panel);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    animation: aparecer 0.35s ease;
+}
+
+.oculta {
+    display: none;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Textos ---------- */
+h2 {
+    color: var(--texto);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: var(--acento);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin: 22px 0 12px;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
 }
 
 p {
-    line-height: 1.5;
-    margin-bottom: 12px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.sobretitulo {
+    color: var(--acento);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.subtitulo {
+    color: var(--texto-suave);
+    font-size: 1.1rem;
+}
+
+/* ---------- Rejilla y tarjetas ---------- */
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
 }
 
 .tarjeta {
-    background: #35566e;
-    border-radius: 12px;
-    padding: 16px;
+    background: var(--tarjeta);
+    border-radius: 14px;
+    padding: 18px;
     margin-bottom: 16px;
 }
 
-button {
-    background: #4fc3b0;
-    color: #16263f;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-weight: bold;
+.dialogo {
+    border-left: 5px solid var(--acento);
+    font-size: 1.1rem;
+}
+
+.final {
+    border-left: 5px solid var(--amarillo);
+}
+
+/* Sospechosos */
+.sospechoso {
+    background: var(--tarjeta);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
     cursor: pointer;
-    margin: 4px 4px 4px 0;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.sospechoso:hover {
+    transform: translateY(-4px);
+    border-color: var(--acento);
+}
+
+.sospechoso p {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* Avatar hecho con CSS (cabeza + cuerpo) */
+.avatar {
+    position: relative;
+    width: 70px;
+    height: 80px;
+    margin: 0 auto 12px;
+}
+
+.avatar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #94d1c8;
+}
+
+.avatar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 44px;
+    border-radius: 22px;
+    background: #669da0;
+}
+
+/* Pistas */
+.pista {
+    background: var(--tarjeta);
+    border-radius: 14px;
+    padding: 16px;
+    border-top: 4px solid var(--amarillo);
+}
+
+.pista .icono {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pista p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* ---------- Barra de progreso ---------- */
+.progreso-info {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin: 10px 0 6px;
+}
+
+.progreso {
+    height: 12px;
+    background: #2b4a66;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#progreso-barra {
+    height: 100%;
+    width: 0%;
+    background: var(--acento);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* ---------- Botones ---------- */
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+button {
+    background: var(--acento);
+    color: var(--fondo);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
 }
 
 button:hover {
-    background: #6fd9c7;
+    background: var(--acento-claro);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button.secundario {
+    background: transparent;
+    color: var(--acento);
+    border: 2px solid var(--acento);
+}
+
+button.secundario:hover {
+    background: #2b4a66;
+}
+
+/* ---------- Barra de vista previa (solo diseño) ---------- */
+.demo-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #0e1a2c;
+    border-top: 2px solid var(--amarillo);
+    font-size: 0.85rem;
+    color: var(--amarillo);
+}
+
+.demo-nav button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+    main {
+        padding: 12px;
+    }
+    .pantalla {
+        padding: 18px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .barra {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
