@@ -7,7 +7,135 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>Caso 1: El robo en el museo</h3>
-    <p>Una pieza valiosa desapareció del museo durante la noche.</p>
+    <header class="barra">
+        <h1>🔎 Detective Digital</h1>
+        <span class="etiqueta">Caso 1 · El robo en el museo</span>
+    </header>
+
+    <main>
+        <!-- MENÚ -->
+        <section id="pantalla-menu" class="pantalla">
+            <p class="sobretitulo">Proyecto 04</p>
+            <h2>El robo en el museo</h2>
+            <p class="subtitulo">El misterio interactivo</p>
+            <p id="intro-texto">Una pieza valiosa desapareció del museo durante la noche. Interroga a los sospechosos, reúne pruebas y descubre al culpable.</p>
+            <button id="btn-iniciar">Iniciar investigación</button>
+        </section>
+
+        <!-- ESCENA -->
+        <section id="pantalla-escena" class="pantalla oculta">
+            <h2>Escena del robo</h2>
+            <p id="escena-texto">La sala principal está en silencio. La vitrina está rota y falta la pieza más valiosa.</p>
+
+            <div class="progreso-info">
+                Pistas encontradas: <strong><span id="pistas-contador">0</span></strong>
+            </div>
+            <div class="progreso"><div id="progreso-barra"></div></div>
+
+            <h3>Sospechosos</h3>
+            <div id="lista-sospechosos" class="rejilla">
+                <!-- Ejemplos de diseño: app.js los reemplaza -->
+                <div class="sospechoso">
+                    <div class="avatar"></div>
+                    <h4>Sospechoso 1</h4>
+                    <p>Guardia de seguridad</p>
+                </div>
+                <div class="sospechoso">
+                    <div class="avatar"></div>
+                    <h4>Sospechoso 2</h4>
+                    <p>Curadora</p>
+                </div>
+                <div class="sospechoso">
+                    <div class="avatar"></div>
+                    <h4>Sospechoso 3</h4>
+                    <p>Visitante</p>
+                </div>
+            </div>
+
+            <div class="acciones">
+                <button id="btn-libreta" class="secundario">📓 Ver libreta</button>
+                <button id="btn-acusar">⚖️ Acusar</button>
+            </div>
+        </section>
+
+        <!-- INTERROGATORIO -->
+        <section id="pantalla-interrogatorio" class="pantalla oculta">
+            <h2 id="interrogado-nombre">Sospechoso 1</h2>
+            <div class="tarjeta dialogo">
+                <p id="dialogo-texto">Yo estaba en mi ronda a esa hora. No vi nada raro.</p>
+            </div>
+            <div id="dialogo-opciones" class="acciones">
+                <button>Preguntar por la coartada</button>
+                <button>Acusarlo directamente</button>
+            </div>
+            <button id="btn-volver-escena" class="secundario">← Volver a la escena</button>
+        </section>
+
+        <!-- LIBRETA -->
+        <section id="pantalla-libreta" class="pantalla oculta">
+            <h2>Libreta de pistas</h2>
+            <div id="inventario" class="rejilla">
+                <div class="pista">
+                    <span class="icono">🖐️</span>
+                    <h4>Huella</h4>
+                    <p>Encontrada en la vitrina.</p>
+                </div>
+                <div class="pista">
+                    <span class="icono">🔑</span>
+                    <h4>Llave</h4>
+                    <p>Estaba cerca de la puerta trasera.</p>
+                </div>
+            </div>
+            <button id="btn-cerrar-libreta" class="secundario">← Cerrar libreta</button>
+        </section>
+
+        <!-- ACUSACIÓN -->
+        <section id="pantalla-acusacion" class="pantalla oculta">
+            <h2>¿Quién es el culpable?</h2>
+            <p>Elige con cuidado. Una acusación sin pruebas puede arruinar el caso.</p>
+            <div id="lista-acusacion" class="rejilla">
+                <div class="sospechoso">
+                    <div class="avatar"></div>
+                    <h4>Sospechoso 1</h4>
+                </div>
+                <div class="sospechoso">
+                    <div class="avatar"></div>
+                    <h4>Sospechoso 2</h4>
+                </div>
+            </div>
+            <button id="btn-cancelar-acusacion" class="secundario">← Volver</button>
+        </section>
+
+        <!-- RESULTADO -->
+        <section id="pantalla-resultado" class="pantalla oculta">
+            <h2 id="resultado-titulo">Caso resuelto</h2>
+            <div class="tarjeta final">
+                <p id="resultado-texto">Aquí aparecerá el final de la historia.</p>
+            </div>
+            <button id="btn-reiniciar">Volver al menú</button>
+        </section>
+    </main>
+
+    <!-- SOLO PARA DISEÑO: borrar este bloque cuando app.js esté listo -->
+    <div class="demo-nav">
+        <span>Vista previa:</span>
+        <button data-ir="pantalla-menu">Menú</button>
+        <button data-ir="pantalla-escena">Escena</button>
+        <button data-ir="pantalla-interrogatorio">Interrogar</button>
+        <button data-ir="pantalla-libreta">Libreta</button>
+        <button data-ir="pantalla-acusacion">Acusar</button>
+        <button data-ir="pantalla-resultado">Final</button>
+    </div>
+    <script>
+        document.querySelectorAll('.demo-nav button').forEach(function (b) {
+            b.addEventListener('click', function () {
+                document.querySelectorAll('.pantalla').forEach(function (p) { p.classList.add('oculta'); });
+                document.getElementById(b.dataset.ir).classList.remove('oculta');
+            });
+        });
+    </script>
+    <!-- FIN DEL BLOQUE DE DISEÑO -->
+
+    <script src="app.js"></script>
 </body>
 </html>
