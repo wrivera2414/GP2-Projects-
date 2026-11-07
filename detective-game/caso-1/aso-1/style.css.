@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #16263f;
+    color: #e8f1f2;
+    padding: 24px;
+}
+
+h1, h2, h3 {
+    color: #4fc3b0;
+    margin-bottom: 12px;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.tarjeta {
+    background: #35566e;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+button {
+    background: #4fc3b0;
+    color: #16263f;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+}
+
+button:hover {
+    background: #6fd9c7;
+}
