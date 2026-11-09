@@ -1,0 +1,55 @@
+{
+  "director": [
+    {
+      "id": "horario",
+      "pregunta": "¿Dónde estaba al cerrar el museo?",
+      "respuesta": "En mi oficina revisando documentos. Nadie puede confirmar la hora exacta."
+    },
+    {
+      "id": "deudas",
+      "pregunta": "¿Es cierto que tiene deudas?",
+      "respuesta": "Tengo problemas económicos, pero jamás dañaría el museo."
+    },
+    {
+      "id": "tarjeta",
+      "pregunta": "¿Quién usa las tarjetas administrativas?",
+      "respuesta": "El guardia las custodia, aunque yo también tengo acceso autorizado."
+    }
+  ],
+  "estudiante": [
+    {
+      "id": "salida",
+      "pregunta": "¿A qué hora se fue?",
+      "respuesta": "Poco antes del cierre. Guardé mis cosas en el archivo."
+    },
+    {
+      "id": "discusion",
+      "pregunta": "¿Qué discusión escuchó?",
+      "respuesta": "El director exigió que desactivaran una alarma para revisar una vitrina."
+    },
+    {
+      "id": "copia",
+      "pregunta": "¿Hay copia de la grabación?",
+      "respuesta": "Sí. Guardé una copia automática del pasillo antes de irme. Se ve al director durante el apagón.",
+      "pista": "grabacion"
+    }
+  ],
+  "guardia": [
+    {
+      "id": "ronda",
+      "pregunta": "¿Qué ocurrió durante la ronda?",
+      "respuesta": "Se apagó la cámara del corredor, así que revisé la puerta principal."
+    },
+    {
+      "id": "registro",
+      "pregunta": "¿Qué indica el registro de tarjetas?",
+      "respuesta": "La tarjeta administrativa se usó después del cierre. Aquí tiene una impresión del registro.",
+      "pista": "tarjeta"
+    },
+    {
+      "id": "alarmas",
+      "pregunta": "¿Quién pidió desactivar la alarma?",
+      "respuesta": "El director solicitó una revisión especial. Debí dejarlo por escrito."
+    }
+  ]
+}

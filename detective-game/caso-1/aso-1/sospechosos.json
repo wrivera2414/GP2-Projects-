@@ -1,0 +1,23 @@
+[
+  {
+    "id": "director",
+    "nombre": "El director",
+    "descripcion": "Administra la colección y tiene deudas.",
+    "imagen": "img/director.png.jpeg",
+    "inicio": "Yo estaba preparando el informe anual. No sé quién entró a la sala."
+  },
+  {
+    "id": "estudiante",
+    "nombre": "El estudiante",
+    "descripcion": "Becario con acceso al archivo.",
+    "imagen": "img/estudiante.png.jpeg",
+    "inicio": "Salí antes del cierre, aunque vi a alguien discutir con el guardia."
+  },
+  {
+    "id": "guardia",
+    "nombre": "El guardia",
+    "descripcion": "Responsable de la ronda nocturna.",
+    "imagen": "img/guardia.png.jpeg",
+    "inicio": "Hice mi ronda habitual, pero la cámara falló unos minutos."
+  }
+]
