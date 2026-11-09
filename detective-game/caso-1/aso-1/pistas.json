@@ -1,0 +1,23 @@
+[
+  {
+    "id": "vidrio",
+    "nombre": "Vidrio roto",
+    "descripcion": "Los fragmentos cayeron dentro de la vitrina: parece un golpe desde afuera.",
+    "imagen": "img/vidrio.png.jpeg",
+    "fuente": "escena"
+  },
+  {
+    "id": "tarjeta",
+    "nombre": "Tarjeta de acceso",
+    "descripcion": "El registro señala que se utilizó una tarjeta de administración después del cierre.",
+    "imagen": "img/tarjeta.png.jpeg",
+    "fuente": "guardia"
+  },
+  {
+    "id": "grabacion",
+    "nombre": "Grabación borrada",
+    "descripcion": "Una copia de respaldo muestra al director entrando al corredor durante la falla.",
+    "imagen": "img/grabacion.png.jpeg",
+    "fuente": "estudiante"
+  }
+]

@@ -296,3 +296,12 @@ button.secundario:hover {
         font-size: 42px;
     }
 }
+
+/* Ajustes funcionales mínimos que respetan el diseño original */
+#progreso-barra { width: 0; transition: width .35s ease; }
+.sospechoso.seleccionado { border-color:#e3c28a; box-shadow:0 0 0 2px #c9a06a; }
+.acciones button:disabled {opacity:.5;cursor:not-allowed}
+#pistas-escena {margin:18px 0}
+#pantalla-resultado .tarjeta {max-width:780px}
+button:focus-visible,.sospechoso:focus-visible {outline:3px solid #fff;outline-offset:3px}
+.aviso {margin:12px 0;color:#e3c28a}

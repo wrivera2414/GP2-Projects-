@@ -1,3 +1,12 @@
 {
-  "caso": "El robo en el museo"
+  "id": "caso-1",
+  "caso": "El robo en el museo",
+  "introduccion": "La Esmeralda del Valle desapareció durante la gala del museo. La vitrina está rota, pero alguien pudo usar una tarjeta de acceso. Investigá antes de acusar.",
+  "escena": "La vitrina fue golpeada desde afuera. El registro de accesos indica una entrada nocturna y la cámara del pasillo dejó de grabar durante siete minutos.",
+  "culpable": "director",
+  "pistas_necesarias": [
+    "vidrio",
+    "tarjeta",
+    "grabacion"
+  ]
 }

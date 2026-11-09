@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caso 1 - El robo en el museo</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aso-1/style.css">
 </head>
 <body>
 
@@ -22,29 +22,29 @@
             <p id="intro-texto" class="intro">Una pieza invaluable desapareció durante la noche. Interroga a los sospechosos, reúne evidencias y descubre al culpable.</p>
             <div class="acciones">
                 <button id="btn-iniciar">Iniciar investigación</button>
-                <button class="secundario">Cómo jugar</button>
+                <button id="btn-ayuda" class="secundario">Cómo jugar</button>
             </div>
         </section>
 
         <!-- SOSPECHOSOS -->
         <section id="pantalla-sospechosos" class="pantalla oculta">
-            <p class="progreso-info">Pistas encontradas: <strong id="pistas-contador">2</strong> de 3</p>
+            <p class="progreso-info">Pistas encontradas: <strong id="pistas-contador">0</strong> de <strong id="pistas-total">3</strong></p>
             <div class="progreso"><div id="progreso-barra"></div></div>
             <h2>¿A quién vas a interrogar?</h2>
             <p>Elige un sospechoso para interrogarlo.</p>
             <div id="lista-sospechosos" class="rejilla">
                 <div class="sospechoso">
-                    <div class="foto"><img src="img/director.png" alt="El director"></div>
+                    <div class="foto"><img src="img/director.png.jpeg" alt="El director"></div>
                     <h4>El director</h4>
                     <p>Tiene deudas</p>
                 </div>
                 <div class="sospechoso">
-                    <div class="foto"><img src="img/estudiante.png" alt="El estudiante"></div>
+                    <div class="foto"><img src="img/estudiante.png.jpeg" alt="El estudiante"></div>
                     <h4>El estudiante</h4>
                     <p>Becario con acceso</p>
                 </div>
                 <div class="sospechoso">
-                    <div class="foto"><img src="img/guardia.png" alt="El guardia"></div>
+                    <div class="foto"><img src="img/guardia.png.jpeg" alt="El guardia"></div>
                     <h4>El guardia</h4>
                     <p>Ronda nocturna</p>
                 </div>
@@ -62,19 +62,20 @@
             <div class="paneles">
                 <div class="panel">
                     <div class="polaroid">
-                        <img src="img/escena.png" alt="Escena del robo" class="escena-foto">
+                        <img src="escena.png.jpeg" alt="Escena del robo" class="escena-foto">
                         <span>Escena del robo</span>
                     </div>
                     <p id="escena-texto" class="nota">La vitrina está rota y falta la pieza más valiosa del museo.</p>
                 </div>
             </div>
+            <div id="pistas-escena" class="acciones"></div>
             <button id="btn-volver-sospechosos" class="secundario">← Volver a los sospechosos</button>
         </section>
 
         <!-- INTERROGATORIO -->
         <section id="pantalla-interrogatorio" class="pantalla oculta">
             <div class="interrogado">
-                <div class="foto"><img src="img/guardia.png" alt="El guardia"></div>
+                <div class="foto"><img id="interrogado-foto" src="img/guardia.png.jpeg" alt="Sospechoso"></div>
                 <div class="contenido">
                     <h2 id="interrogado-nombre">El guardia</h2>
                     <div class="tarjeta">
@@ -94,17 +95,17 @@
             <h2>Evidencias</h2>
             <div id="inventario" class="rejilla">
                 <div class="evidencia">
-                    <div class="foto"><img src="img/tarjeta.png" alt="Tarjeta de acceso"></div>
+                    <div class="foto"><img src="img/tarjeta.png.jpeg" alt="Tarjeta de acceso"></div>
                     <h4>Tarjeta de acceso</h4>
                     <p>Abrió la sala de noche.</p>
                 </div>
                 <div class="evidencia">
-                    <div class="foto"><img src="img/vidrio.png" alt="Vidrio roto"></div>
+                    <div class="foto"><img src="img/vidrio.png.jpeg" alt="Vidrio roto"></div>
                     <h4>Vidrio roto</h4>
                     <p>Vitrina forzada desde afuera.</p>
                 </div>
                 <div class="evidencia bloqueada">
-                    <div class="foto"><img src="img/grabacion.png" alt="Grabación borrada"></div>
+                    <div class="foto"><img src="img/grabacion.png.jpeg" alt="Grabación borrada"></div>
                     <h4>Grabación borrada</h4>
                     <p>Sin hallar</p>
                 </div>
@@ -131,44 +132,14 @@
                 <p id="resultado-texto">Aquí aparecerá el final de la historia.</p>
             </div>
             <button id="btn-reiniciar">Volver al menú</button>
+            <button id="btn-nueva-partida" class="secundario">Nueva investigación</button>
         </section>
 
     </main>
 
-    <!-- SOLO PARA DISEÑO: borrar este bloque cuando app.js esté listo -->
-    <div class="demo-nav">
-        <span>Vista previa:</span>
-        <button data-ir="pantalla-menu">Menú</button>
-        <button data-ir="pantalla-sospechosos">Sospechosos</button>
-        <button data-ir="pantalla-escena">Escena</button>
-        <button data-ir="pantalla-interrogatorio">Interrogar</button>
-        <button data-ir="pantalla-libreta">Evidencias</button>
-        <button data-ir="pantalla-acusacion">Acusar</button>
-        <button data-ir="pantalla-resultado">Final</button>
-        <button id="btn-pantalla-completa" class="secundario">Pantalla completa</button>
-    </div>
-    <script>
-        // Muestra solo la pantalla que se elige en la barra de vista previa
-        document.querySelectorAll('.demo-nav button[data-ir]').forEach(function (boton) {
-            boton.addEventListener('click', function () {
-                document.querySelectorAll('.pantalla').forEach(function (p) {
-                    p.classList.add('oculta');
-                });
-                document.getElementById(boton.dataset.ir).classList.remove('oculta');
-            });
-        });
 
-        // Botón de pantalla completa
-        document.getElementById('btn-pantalla-completa').addEventListener('click', function () {
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
-            } else {
-                document.documentElement.requestFullscreen();
-            }
-        });
-    </script>
-    <!-- FIN DEL BLOQUE DE DISEÑO -->
-
-    <script src="app.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="aso-1/datos-locales.js"></script>
+    <script src="aso-1/app.js"></script>
 </body>
 </html>
