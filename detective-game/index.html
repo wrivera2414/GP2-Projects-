@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Digital</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1422;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: linear-gradient(135deg, #172940, #0d192b);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #c9a06a;
+        }
+
+        .logo {
+            font-size: 15px;
+            color: #d9b477;
+            letter-spacing: 5px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #e2c18b;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        /* PRESENTACION */
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+        .introduccion {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .etiqueta {
+            color: #c9a06a;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .introduccion h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .introduccion p {
+            color: #aebdd0;
+            line-height: 1.7;
+        }
+
+        /* TARJETAS */
+
+        .casos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: linear-gradient(145deg, #1d3049, #14243a);
+            border: 1px solid #344c68;
+            border-radius: 14px;
+            padding: 30px 23px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-9px);
+            border-color: #d5ad72;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        .icono {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #293e59;
+            border: 1px solid #c9a06a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+        }
+
+        .numero {
+            color: #c9a06a;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta h3 {
+            color: #e2c18b;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta p {
+            color: #bdc9d8;
+            font-size: 14px;
+            line-height: 1.7;
+            min-height: 95px;
+            margin-bottom: 22px;
+        }
+
+        /* BOTONES */
+
+        .boton {
+            display: inline-block;
+            text-decoration: none;
+            background: #c9a06a;
+            color: #17212e;
+            padding: 13px 23px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #efd09b;
+            transform: scale(1.05);
+        }
+
+        /* PIE DE PAGINA */
+
+        footer {
+            border-top: 1px solid #263a52;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 40px;
+            color: #899bb1;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #d5ad72;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .casos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 29px;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .casos {
+                grid-template-columns: 1fr;
+            }
+
+            .introduccion h2 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">◈ ARCHIVOS CONFIDENCIALES ◈</div>
+        <h1>DETECTIVE DIGITAL</h1>
+        <p>La verdad está oculta. ¿Podrás descubrirla?</p>
+    </header>
+
+    <main>
+
+        <section class="introduccion">
+            <div class="etiqueta">CENTRO DE INVESTIGACIÓN</div>
+
+            <h2>Selecciona tu investigación</h2>
+
+            <p>
+                Cada misterio esconde una verdad.
+                Analiza las evidencias, investiga los hechos
+                y descubre quién está detrás de cada caso.
+            </p>
+        </section>
+
+        <section class="casos">
+
+            <!-- CASO 1 -->
+
+            <div class="tarjeta">
+
+                <div class="icono">🔎</div>
+
+                <div class="numero">EXPEDIENTE 001</div>
+
+                <h3>El robo en el museo</h3>
+
+                <p>
+                    Una pieza invaluable ha desaparecido.
+                    Interroga a los sospechosos y descubre
+                    quién cometió el robo.
+                </p>
+
+                <a href="caso-1/index.html" class="boton">
+                    Investigar caso →
+                </a>
+
+            </div>
+
+            <!-- CASO 2 -->
+
+            <div class="tarjeta">
+
+                <div class="icono">🏚️</div>
+
+                <div class="numero">EXPEDIENTE 002</div>
+
+                <h3>Desaparición en la mansión</h3>
+
+                <p>
+                    Una misteriosa desaparición ocurre
+                    dentro de una antigua mansión.
+                    Investiga las pistas y descubre la verdad.
+                </p>
+
+                <a href="caso-2/index2.html" class="boton">
+                    Investigar caso →
+                </a>
+
+            </div>
+
+            <!-- CASO 3 -->
+
+            <div class="tarjeta">
+
+                <div class="icono">🚂</div>
+
+                <div class="numero">EXPEDIENTE 003</div>
+
+                <h3>Crimen en el tren</h3>
+
+                <p>
+                    Un extraño crimen pone en peligro
+                    una investigación. Examina las pruebas
+                    y encuentra al responsable.
+                </p>
+
+                <a href="caso-3/index3.html" class="boton">
+                    Investigar caso →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>DETECTIVE DIGITAL</p>
+        <p>Proyecto de investigación interactiva</p>
+        <p>© 2026 - <span>Todos los misterios tienen una respuesta.</span></p>
+    </footer>
+
+</body>
+</html>
