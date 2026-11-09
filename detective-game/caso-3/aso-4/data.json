@@ -1,0 +1,12 @@
+{
+  "id": "caso-4",
+  "caso": "El secuestro en la escuela",
+  "introduccion": "Mateo Valdés, de nueve años, hijo del multimillonario Rodrigo Valdés, desapareció del colegio San Gabriel durante el recreo. Minutos después llegó una llamada: piden dinero a cambio de su regreso. Investigá antes de acusar.",
+  "escena": "El portón lateral del colegio quedó entreabierto y la mochila de Mateo apareció en el patio trasero. En el suelo había un pase de salida con la firma del padre, pero el señor Valdés jura que nunca lo firmó. El timbre del recreo sonó a las 10:15.",
+  "culpable": "secretaria",
+  "pistas_necesarias": [
+    "pase",
+    "llave",
+    "llamada"
+  ]
+}

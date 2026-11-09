@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Digital</title>
+    <meta name="theme-color" content="#161a27">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aso-3/style.css">
+</head>
+<body>
+
+    <header class="barra">
+    <h1 id="titulo-barra"><a href="../index0.html">Detective Digital</a></h1>
+    <span class="barra-seccion">Sala de Investigación</span>
+</header>
+
+    <main>
+
+        <!-- ELEGIR CASO -->
+        <section id="pantalla-casos" class="pantalla">
+            <h2>Elige un caso</h2>
+            <p>Cada caso tiene sus propios sospechosos, pistas y finales.</p>
+            <div id="lista-casos" class="rejilla rejilla-casos"></div>
+        </section>
+
+        <!-- MENÚ DEL CASO -->
+        <section id="pantalla-menu" class="pantalla oculta">
+            <div class="hero">
+                <div class="hero-texto">
+                    <p id="menu-etiqueta" class="sobretitulo">Caso 001</p>
+                    <h2 id="menu-titulo" class="titulo-grande">Investigaciones por secuestro</h2>
+                    <p id="intro-texto" class="intro"></p>
+                    <div class="acciones">
+                        <button id="btn-iniciar">Iniciar investigación</button>
+                        <button id="btn-cambiar-caso" class="secundario">← Cambiar de caso</button>
+                    </div>
+                </div>
+                <div class="hero-imagen">
+                    <img id="menu-imagen" src="escena.jpg" alt="Escena del caso">
+                </div>
+            </div>
+        </section>
+
+        <!-- SOSPECHOSOS -->
+        <section id="pantalla-sospechosos" class="pantalla oculta">
+            <p class="progreso-info">Pistas encontradas: <strong id="pistas-contador">0</strong> de <strong id="pistas-total">3</strong></p>
+            <div class="progreso"><div id="progreso-barra"></div></div>
+            <h2>¿A quién vas a interrogar?</h2>
+            <p>Elige un sospechoso para interrogarlo.</p>
+            <div id="lista-sospechosos" class="rejilla"></div>
+            <div class="acciones">
+                <button id="btn-escena" class="secundario">Ver escena</button>
+                <button id="btn-libreta" class="secundario">Ver evidencias</button>
+                <button id="btn-acusar">Hacer la acusación</button>
+            </div>
+        </section>
+
+        <!-- ESCENA -->
+        <section id="pantalla-escena" class="pantalla oculta">
+            <h2 id="escena-titulo">Escena del secuestro</h2>
+            <div class="paneles">
+                <div class="panel">
+                    <div class="polaroid">
+                        <img id="escena-foto" src="escena.jpg" alt="Escena del secuestro" class="escena-foto">
+                        <span>Escena del secuestro</span>
+                    </div>
+                    <p id="escena-texto" class="nota"></p>
+                </div>
+            </div>
+            <div id="pistas-escena" class="acciones"></div>
+            <button id="btn-volver-sospechosos" class="secundario">← Volver a los sospechosos</button>
+        </section>
+
+        <!-- INTERROGATORIO -->
+        <section id="pantalla-interrogatorio" class="pantalla oculta">
+            <div class="interrogado">
+                <div class="foto"><img id="interrogado-foto" src="" alt="Sospechoso"></div>
+                <div class="contenido">
+                    <h2 id="interrogado-nombre"></h2>
+                    <div class="tarjeta">
+                        <p id="dialogo-texto"></p>
+                    </div>
+                    <div id="dialogo-opciones" class="acciones"></div>
+                    <button id="btn-volver-escena" class="secundario">← Volver a los sospechosos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVIDENCIAS -->
+        <section id="pantalla-libreta" class="pantalla oculta">
+            <h2>Evidencias</h2>
+            <div id="inventario" class="rejilla"></div>
+            <button id="btn-cerrar-libreta" class="secundario">← Volver a los sospechosos</button>
+        </section>
+
+        <!-- ACUSACIÓN -->
+        <section id="pantalla-acusacion" class="pantalla oculta">
+            <h2>¿Quién es el culpable?</h2>
+            <p>Elige con cuidado. Una acusación sin pruebas puede arruinar el caso.</p>
+            <div id="lista-acusacion" class="rejilla"></div>
+            <button id="btn-cancelar-acusacion" class="secundario">← Volver</button>
+        </section>
+
+        <!-- RESULTADO -->
+        <section id="pantalla-resultado" class="pantalla oculta">
+            <h2 id="resultado-titulo">Caso resuelto</h2>
+            <div class="tarjeta">
+                <p id="resultado-texto">Aquí aparecerá el final de la historia.</p>
+            </div>
+            <button id="btn-reiniciar">Volver al menú</button>
+            <button id="btn-nueva-partida" class="secundario">Nueva investigación</button>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+    <div class="pie-dato"><span class="pie-etiqueta">Clase</span><span>Programación Web II</span></div>
+    <div class="pie-dato"><span class="pie-etiqueta">Grupo</span><span>Grupo #2</span></div>
+    <div class="pie-dato"><span class="pie-etiqueta">Carrera</span><span>Ingeniería en Computación</span></div>
+    </footer>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="aso-3/datos-locales.js"></script>
+    <script src="aso-3/app.js"></script>
+</body>
+</html>

@@ -163,4 +163,16 @@ $(document).ready(function () {
             mostrar('pantalla-menu');
         }
     });
+    $('#btn-menu-principal').click(function () {
+            window.location.href = 'index1.html';
+            encontradas = [];
+            guardar();
+            actualizarPistas();
+    });   
+    $('#btn-inicio').click(function () {
+        window.location.href = '../index0.html';
+        encontradas = [];
+        guardar();
+        actualizarPistas();
+    });
 });

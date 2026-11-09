@@ -1,0 +1,55 @@
+{
+  "socio": [
+    {
+      "id": "horario",
+      "pregunta": "¿Dónde estaba anoche?",
+      "respuesta": "En una cena con inversionistas en el centro. Salí tarde, cerca de las once y media."
+    },
+    {
+      "id": "patente",
+      "pregunta": "¿Qué pasará con la patente de la fórmula?",
+      "respuesta": "Sin Elías, los derechos pasan a mi empresa. Sé cómo suena, pero yo quería a mi amigo."
+    },
+    {
+      "id": "llamada",
+      "pregunta": "¿Los secuestradores lo llamaron?",
+      "respuesta": "Una llamada de número oculto pidiendo dinero. Colgaron antes de decir dónde entregarlo."
+    }
+  ],
+  "asistente": [
+    {
+      "id": "salida",
+      "pregunta": "¿Qué pasó antes de que se fuera?",
+      "respuesta": "Dejé al doctor con su café. El señor Salazar se lo había enviado en un termo, como un detalle."
+    },
+    {
+      "id": "medicinas",
+      "pregunta": "¿El doctor tomaba algo para dormir?",
+      "respuesta": "Jamás. Odiaba los medicamentos; ni siquiera tomaba pastillas para el dolor de cabeza."
+    },
+    {
+      "id": "nota",
+      "pregunta": "¿Encontró alguna nota?",
+      "respuesta": "Sí, estaba debajo de la puerta del laboratorio al llegar. Aquí la tiene. Fíjese bien en el papel.",
+      "pista": "nota"
+    }
+  ],
+  "tecnico": [
+    {
+      "id": "aviso",
+      "pregunta": "¿Qué falla le avisaron?",
+      "respuesta": "A las 22:25 una llamada de número oculto me pidió revisar el servidor del sótano. Estuve allí media hora."
+    },
+    {
+      "id": "registro",
+      "pregunta": "¿Qué muestra el registro de las cámaras?",
+      "respuesta": "Alguien entró con una clave de administrador y dejó un bucle de video. La clave es del socio. Aquí tiene la impresión.",
+      "pista": "camaras"
+    },
+    {
+      "id": "claves",
+      "pregunta": "¿Quién tiene claves de administrador?",
+      "respuesta": "Yo y el socio, porque financió la instalación. Yo nunca presto la mía."
+    }
+  ]
+}
