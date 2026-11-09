@@ -1,0 +1,22 @@
+[
+  {
+    "id": "laboratorio",
+    "etiqueta": "Caso 001",
+    "corto": "Secuestro en laboratorio",
+    "titulo": "El secuestro en el laboratorio",
+    "resumen": "Un científico desaparece de una habitación cerrada por dentro.",
+    "carpeta": "aso-3",
+    "imagen": "img/escena.jpg",
+    "clave": "pistasLaboratorio"
+  },
+  {
+    "id": "escuela",
+    "etiqueta": "Caso 002",
+    "corto": "Secuestro en la escuela",
+    "titulo": "El secuestro en la escuela",
+    "resumen": "El hijo de un multimillonario desaparece del colegio y llega una petición de dinero.",
+    "carpeta": "aso-4",
+    "imagen": "img/escuela/escuela.jpg",
+    "clave": "pistasEscuela"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "secretaria",
+    "nombre": "La secretaria",
+    "descripcion": "Lleva el registro de entradas y salidas.",
+    "imagen": "img/escuela/secretaria.jpg",
+    "inicio": "Esto es horrible. Mateo es un niño tan dulce. Yo estaba en mi oficina."
+  },
+  {
+    "id": "conserje",
+    "nombre": "El conserje",
+    "descripcion": "Cuida los portones y las llaves.",
+    "imagen": "img/escuela/conserje.png",
+    "inicio": "Llevo veinte años en este colegio y nunca había pasado algo así."
+  },
+  {
+    "id": "chofer",
+    "nombre": "El chofer",
+    "descripcion": "Lleva a Mateo al colegio todos los días.",
+    "imagen": "img/escuela/chofer.jpg",
+    "inicio": "Lo dejé en la puerta a las siete y media, como siempre. Ahora solo espero noticias."
+  }
+]

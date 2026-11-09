@@ -1,0 +1,55 @@
+{
+  "secretaria": [
+    {
+      "id": "horario",
+      "pregunta": "¿Dónde estaba durante el recreo?",
+      "respuesta": "En mi oficina, con papeles atrasados. No salí en toda la mañana."
+    },
+    {
+      "id": "salidas",
+      "pregunta": "¿Quién autoriza las salidas de los niños?",
+      "respuesta": "Yo reviso cada pase y lo sello. Por eso me duele tanto que esto haya pasado."
+    },
+    {
+      "id": "padre",
+      "pregunta": "¿Qué opina del señor Valdés?",
+      "respuesta": "Es muy generoso con el colegio. Dicen que su fortuna no tiene fondo, pero yo nunca me fijé en eso."
+    }
+  ],
+  "conserje": [
+    {
+      "id": "ronda",
+      "pregunta": "¿Qué hacía a las diez y cuarto?",
+      "respuesta": "Cambiaba una bombilla en la cancha. El profesor de deportes puede confirmarlo."
+    },
+    {
+      "id": "llaves",
+      "pregunta": "¿Quién abre el portón lateral?",
+      "respuesta": "Solo se abre con la llave de la dirección. Yo no la tengo: la guarda la secretaria. Mire el registro que imprimí.",
+      "pista": "llave"
+    },
+    {
+      "id": "auto",
+      "pregunta": "¿Vio algo raro afuera?",
+      "respuesta": "Un auto gris esperaba frente al colegio, pero se fue vacío. No me pareció importante."
+    }
+  ],
+  "chofer": [
+    {
+      "id": "recreo",
+      "pregunta": "¿Dónde estaba durante el recreo?",
+      "respuesta": "Estacionado frente al colegio, esperando. Hay una cámara que me enfoca."
+    },
+    {
+      "id": "llamada",
+      "pregunta": "¿Los secuestradores llamaron?",
+      "respuesta": "Al celular del señor Valdés, a las 10:50. Grabé la llamada. Escuche bien el fondo.",
+      "pista": "llamada"
+    },
+    {
+      "id": "rutina",
+      "pregunta": "¿Quién conocía la rutina de Mateo?",
+      "respuesta": "Todo el colegio. Se sabe quién es su padre y a qué hora sale al recreo."
+    }
+  ]
+}

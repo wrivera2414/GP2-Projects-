@@ -1,0 +1,23 @@
+[
+  {
+    "id": "somnifero",
+    "nombre": "Rastros de somnífero",
+    "descripcion": "El análisis de la taza revela un potente somnífero: el doctor fue drogado antes de desaparecer.",
+    "imagen": "img/somnifero.jpg",
+    "fuente": "escena"
+  },
+  {
+    "id": "nota",
+    "nombre": "Nota de rescate",
+    "descripcion": "Está escrita en papel con la marca de agua de Salazar & Asociados, la empresa del socio.",
+    "imagen": "img/nota.jpg",
+    "fuente": "asistente"
+  },
+  {
+    "id": "camaras",
+    "nombre": "Cámaras hackeadas",
+    "descripcion": "El video de 22:30 a 23:10 es un bucle falso, activado con la clave de administrador del socio.",
+    "imagen": "img/camaras.jpg",
+    "fuente": "tecnico"
+  }
+]

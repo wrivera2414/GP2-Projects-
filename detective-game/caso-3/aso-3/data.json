@@ -1,0 +1,12 @@
+{
+  "id": "caso-3",
+  "caso": "El secuestro en el laboratorio",
+  "introduccion": "El doctor Elías Montero, creador de una fórmula que vale millones, desapareció de su laboratorio cerrado por dentro. Solo quedan una taza de café y un teléfono que sonó antes de la medianoche. Investigá antes de acusar.",
+  "escena": "La puerta del laboratorio estaba cerrada con llave desde adentro y las ventanas selladas. Sobre el escritorio quedó una taza de café a medio beber, y el teléfono recibió una llamada de número oculto a las 22:40. Las cámaras del edificio no registraron la salida del doctor.",
+  "culpable": "socio",
+  "pistas_necesarias": [
+    "somnifero",
+    "nota",
+    "camaras"
+  ]
+}

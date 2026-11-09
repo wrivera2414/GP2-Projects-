@@ -1,0 +1,14 @@
+{
+  "correcto": {
+    "titulo": "Caso resuelto",
+    "texto": "Reuniste las tres pruebas y acusaste al socio. El somnífero, la nota y las cámaras intervenidas demuestran que drogó al doctor y organizó el secuestro. El doctor Montero fue encontrado con vida."
+  },
+  "insuficiente": {
+    "titulo": "Investigación incompleta",
+    "texto": "Tu sospecha puede ser acertada, pero presentaste la acusación sin reunir las tres pruebas esenciales. El caso queda abierto por falta de evidencia."
+  },
+  "incorrecto": {
+    "titulo": "Acusación equivocada",
+    "texto": "Acusaste a una persona inocente. Las pruebas disponibles no respaldan tu decisión y el verdadero secuestrador sigue libre mientras el doctor continúa desaparecido."
+  }
+}

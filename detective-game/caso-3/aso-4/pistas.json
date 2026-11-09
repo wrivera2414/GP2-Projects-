@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pase",
+    "nombre": "Pase de salida falso",
+    "descripcion": "Lleva la firma del padre, pero el sello es el de la secretaría del colegio.",
+    "imagen": "img/escuela/pase.jpg",
+    "fuente": "escena"
+  },
+  {
+    "id": "llave",
+    "nombre": "Llave del portón lateral",
+    "descripcion": "El registro marca que el portón se abrió a las 10:12 con la llave de la dirección, que solo la secretaria tiene a mano.",
+    "imagen": "img/escuela/llave.jpg",
+    "fuente": "conserje"
+  },
+  {
+    "id": "llamada",
+    "nombre": "Llamada de extorsión grabada",
+    "descripcion": "Al fondo de la grabación suena el timbre del colegio: la llamada se hizo desde adentro, a las 10:50.",
+    "imagen": "img/escuela/llamada.jpg",
+    "fuente": "chofer"
+  }
+]

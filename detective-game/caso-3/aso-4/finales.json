@@ -1,0 +1,14 @@
+{
+  "correcto": {
+    "titulo": "Caso resuelto",
+    "texto": "Reuniste las tres pruebas y acusaste a la secretaria. Falsificó el pase con el sello del colegio, abrió el portón con la llave de la dirección y llamó desde adentro para pedir dinero. Mateo fue encontrado sano y salvo."
+  },
+  "insuficiente": {
+    "titulo": "Investigación incompleta",
+    "texto": "Tu sospecha puede ser acertada, pero presentaste la acusación sin reunir las tres pruebas esenciales. El caso queda abierto por falta de evidencia."
+  },
+  "incorrecto": {
+    "titulo": "Acusación equivocada",
+    "texto": "Acusaste a una persona inocente. Las pruebas no respaldan tu decisión y quien planeó el secuestro sigue libre mientras Mateo continúa desaparecido."
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "socio",
+    "nombre": "El socio",
+    "descripcion": "Financia la investigación y quiere la patente.",
+    "imagen": "img/socio.jpg",
+    "inicio": "Estoy destrozado. Elías es como un hermano para mí. Yo estaba en una cena con inversionistas."
+  },
+  {
+    "id": "asistente",
+    "nombre": "La asistente",
+    "descripcion": "Última persona que vio al doctor.",
+    "imagen": "img/asistente.jpg",
+    "inicio": "Me fui a las diez. El doctor se veía cansado, pero tranquilo. No puedo creer lo que pasó."
+  },
+  {
+    "id": "tecnico",
+    "nombre": "El técnico",
+    "descripcion": "Encargado de las cámaras y la red.",
+    "imagen": "img/tecnico.jpg",
+    "inicio": "Mantengo los sistemas del edificio. Esa noche no estaba de turno, pero me avisaron de una falla."
+  }
+]

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Detective Digital | Unidad de Homicidios</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div
+        class="container-fluid px-3 px-lg-5 py-3 d-flex justify-content-between align-items-center"
+      >
+        <a class="brand" href="" id="homeLink">◈ DETECTIVE DIGITAL</a>
+        <div class="d-flex align-items-center gap-2">
+          <span class="top-caption d-none d-md-inline"
+            >UNIDAD DE HOMICIDIOS</span
+          ><span id="investigatorTag" class="investigator-tag"
+            >SIN REGISTRO</span
+          >
+        </div>
+      </div>
+    </header>
+    <main class="container py-4 py-lg-5">
+      <section id="welcomeView" class="view">
+        <div class="hero row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="eyebrow">SISTEMA CENTRAL · ACCESO RESTRINGIDO</div>
+            <h1 class="hero-title">
+              LA VERDAD<br /><span>DEJA RASTROS.</span>
+            </h1>
+            <p class="lead text-secondary">
+              Analiza escenas, examina evidencias, contrasta testimonios y
+              documenta tus conclusiones.
+            </p>
+            <form id="loginForm" class="mt-4">
+              <label for="investigatorName" class="form-label"
+                >Nombre del investigador</label
+              >
+              <div class="input-group input-group-lg">
+                <input
+                  id="investigatorName"
+                  class="form-control"
+                  maxlength="45"
+                  placeholder="Escribe tu nombre"
+                  required
+                /><button class="btn btn-gold" type="submit">ACCEDER →</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-image">
+              <img
+                src="img/tren/interior-vagon.jpg"
+                alt="Interior del tren nocturno del expediente"
+              /><span class="image-stamp"
+                >ARCHIVO CLASIFICADO · 02 EXPEDIENTES</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mt-4">
+          <div class="col-4">
+            <div class="stat"><b>01</b><span>MODALIDAD</span></div>
+          </div>
+          <div class="col-4">
+            <div class="stat"><b>02</b><span>EXPEDIENTES</span></div>
+          </div>
+          <div class="col-4">
+            <div class="stat"><b>06</b><span>ETAPAS</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboardView" class="view d-none">
+        <div
+          class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4"
+        >
+          <div>
+            <div class="eyebrow">UNIDAD DE HOMICIDIOS</div>
+            <h1 class="section-title">Expedientes de asesinatos</h1>
+            <p class="text-secondary mb-0">
+              Selecciona un expediente de asesinato para iniciar la
+              investigación.
+            </p>
+          </div>
+          <div class="d-flex gap-2">
+            <button id="exportBtn" class="btn btn-outline-gold btn-sm">
+              Exportar progreso JSON</button
+            ><button id="resetBtn" class="btn btn-outline-danger btn-sm">
+              Reiniciar
+            </button>
+          </div>
+        </div>
+        <div id="categoryGrid" class="row g-3 mb-4"></div>
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"
+        >
+          <h2 id="caseGridTitle" class="h4 mb-0">
+            Selecciona una investigación
+          </h2>
+          <span id="categoryPrompt" class="small text-secondary"
+            >Elige una modalidad para consultar sus expedientes.</span
+          >
+        </div>
+        <div id="caseGrid" class="row g-4"></div>
+        <div class="panel mt-4 p-3 p-md-4">
+          <div class="eyebrow">BITÁCORA DEL INVESTIGADOR</div>
+          <div id="activityLog" class="text-secondary small mt-2">
+            Aún no hay actividad registrada.
+          </div>
+        </div>
+      </section>
+
+      <section id="caseView" class="view d-none">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"
+        >
+          <div>
+            <div class="eyebrow" id="caseCode">EXPEDIENTE</div>
+            <h1 id="caseHeading" class="section-title mb-1"></h1>
+            <p id="caseSubheading" class="text-secondary mb-0"></p>
+          </div>
+          <button id="backBtn" class="btn btn-outline-light">
+            ← Expedientes
+          </button>
+        </div>
+        <div class="case-hero" id="caseHero">
+          <div class="eyebrow">INVESTIGACIÓN ABIERTA</div>
+          <h2 id="caseSceneTitle"></h2>
+          <p id="caseSceneDescription" class="mb-0"></p>
+        </div>
+        <nav
+          class="phase-nav"
+          id="phaseNav"
+          aria-label="Etapas de investigación"
+        >
+          <button class="phase active" data-phase="brief">
+            01 · Expediente</button
+          ><button class="phase" data-phase="scene">02 · Escena</button
+          ><button class="phase" data-phase="evidence">03 · Evidencias</button
+          ><button class="phase" data-phase="suspects">04 · Sospechosos</button
+          ><button class="phase" data-phase="interviews">
+            05 · Interrogatorios</button
+          ><button class="phase" data-phase="report">06 · Informe</button>
+        </nav>
+        <div
+          id="phaseContent"
+          class="panel p-3 p-md-4"
+          aria-live="polite"
+        ></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    \n
+    <script src="data/casos.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
